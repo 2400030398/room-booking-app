@@ -1,0 +1,11 @@
+const { validateBookingDates } = require("./booking-validation");
+const assert = require("node:assert/strict");
+const future = new Date();
+future.setDate(future.getDate() + 2);
+const later = new Date(future);
+later.setDate(later.getDate() + 2);
+const fmt = (date) => date.toISOString().slice(0, 10);
+assert.equal(validateBookingDates(fmt(future), fmt(later)).valid, true);
+assert.equal(validateBookingDates(fmt(future), fmt(future)).valid, false);
+assert.equal(validateBookingDates("", fmt(later)).valid, false);
+console.log("Booking date validation tests passed.");
