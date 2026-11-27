@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Room Booking App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <p class="eyebrow">STAY COMFORTABLY</p>
+    <h1>Find your perfect room</h1>
+    <p>Search available rooms and book your next stay.</p>
+  </header>
+  <main>
+    <form id="search-form" class="search">
+      <label>Check-in <input id="check-in" type="date" required></label>
+      <label>Check-out <input id="check-out" type="date" required></label>
+      <label>Guests <input id="guests" type="number" min="1" value="1" required></label>
+      <button type="submit">Search rooms</button>
+    </form>
+    <p id="message" role="status"></p>
+    <section id="rooms" class="rooms" aria-live="polite"></section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
